@@ -37,6 +37,7 @@ app.all('*', setupAsyncLocalStorage)
 app.use('/api/auth', authRoutes)
 app.use('/api/station', stationRoutes)
 app.use('/api/user', userRoutes)
+app.use('/api/category', categoryRoutes)
 
 
 setupSocketAPI(server)
@@ -47,6 +48,7 @@ app.get('/**', (req, res) => {
 })
 
 import { logger } from './services/logger.service.js'
+import { categoryRoutes } from './api/category/category.routes.js'
 const port = process.env.PORT || 3030
 
 server.listen(port, () => {
